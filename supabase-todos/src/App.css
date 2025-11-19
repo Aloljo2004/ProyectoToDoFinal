@@ -1,0 +1,271 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ====== PALETA DE COLORES ====== */
+:root {
+  --bg: #0d0b16;              /* Fondo general, muy oscuro */
+  --card: #1a1630;            /* Tarjetas morado oscuro */
+  --card-light: #221d3a;      /* Hover */
+  --accent: #6a5acd;          /* Morado suave */
+  --accent-hover: #7b68ee;    /* Morado brillante */
+  --accent-glow: #8a7bff;     /* Morado luz */
+  --text: #e0e0ff;            /* Blanco con tono azul */
+  --danger: #ff5577;
+  --danger-hover: #ff7799;
+}
+
+/* ====== ESTILOS GLOBALES ====== */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  max-width: 500px;
+  margin: 60px auto;
+  background: var(--card);
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.6rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(122, 102, 255, 0.6);
+}
+
+/* ====== FORMULARIO ====== */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  background: #120f22;
+  color: var(--text);
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+button {
+  padding: 12px 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 12px var(--accent-hover);
+}
+
+/* ====== LISTA ====== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: var(--card-light);
+  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.2s;
+  animation: fadeIn 0.3s;
+}
+
+li:hover {
+  background: #2a2450;
+  transform: translateX(4px);
+}
+
+li input[type="checkbox"] {
+  transform: scale(1.3);
+  accent-color: var(--accent-hover);
+  cursor: pointer;
+}
+
+li span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* ====== BOTÓN ELIMINAR ====== */
+li button {
+  background: var(--danger);
+  padding: 6px 14px;
+}
+
+li button:hover {
+  background: var(--danger-hover);
+  box-shadow: 0 0 10px var(--danger-hover);
+}
+
+li input[type="checkbox"] {
+    width: auto !important;
+    flex: 0 0 auto !important;
+}
+
+/* ===== FIJAR EL TAMAÑO REAL DEL CHECKBOX ===== */
+li input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+  appearance: none;  /* Eliminar estilos raros del navegador */
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Cuando está marcado */
+li input[type="checkbox"]:checked {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-hover);
+}
+
+.app-container {
+  width: 90%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 8px;
+}
+
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.todo-list {
+  width: 50%;
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.delete-btn {
+  margin-left: auto;
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.priority-scale-container {
+  width: 40%;
+  padding-left: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.priority-scale-list {
+  list-style: none;
+  padding: 0;
+}
+
+.priority-scale-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.priority-block {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
